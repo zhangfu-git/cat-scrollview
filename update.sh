@@ -1,0 +1,1 @@
+cnpm install -g @tarojs/cli@2.2.9
