@@ -1,8 +1,8 @@
 {
 	"miniprogramRoot": "dist/",
 	"projectname": "taro-scrollView",
-	"description": "pro版无效加载列表",
-	"appid": "touristappid",
+	"description": "无效加载列表",
+	"appid": "wx4dba79a8597b847b",
 	"setting": {
 		"urlCheck": true,
 		"es6": false,

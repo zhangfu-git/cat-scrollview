@@ -5,7 +5,7 @@ import './index.less'
 export default class Index extends Component {
 
   config = {
-    navigationBarTitleText: '示例子'
+    navigationBarTitleText: 'cat-scrollView示例子'
   }
 
   componentWillMount () { }
