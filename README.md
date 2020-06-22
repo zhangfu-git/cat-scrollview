@@ -20,10 +20,57 @@
 npm install cat-scrollview
 ```
 
+## 参数说明
+方法 | params说明 | 返回说明
+------------ | ------------- | -------------
+onRequest() | 加载更多的数据触发, 回调参数params={skip, limit} | 该方法需要return{success: true, skip, limit, total, data: dataSource }用来内容状态处理
+onChange() | 当前列表的数据 | 无
+renderHeader | 无 | 组件
+renderFooter | 无 | 组件 
+
+
+可通过ref去调用reload()、reset()进行重置和刷新列表，使用过滤条件改变重新获取列表可以调用reload
 ## 使用
 
 ```js
-import catScrollview from 'cat-scrollview'
+import catScrollview from 'cat-scrollview';
+
+....
+<TaroScrollView
+  onRequest={async(params) => {
+    const { skip, limit } = params;
+    const res = await this.getList({
+      limit,
+      offset: skip,
+    });
+    if (res.errMsg !== 'request:ok') {
+      return {
+        success: false,
+        msg: '获取数据失败'
+      }
+    }
+    const data = res.data;
+    const dataSource = data.data;
+    const paging = data.paging;
+    const total = paging.total;
+    return {
+      success: true,
+      skip,
+      limit,
+      total,
+      data: dataSource
+    }
+  }}
+  onChange={(data) => this.setStatelistData: data })}
+>
+  {
+    listData.map((item) => {
+      return (
+        <MyItem key={item.id} {item} />
+      )
+    })
+  }
+</TaroScrollView>
 ```
 
 
