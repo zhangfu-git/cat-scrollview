@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "description": "无效滚动加载列表",
+  "main": "dist/index.js",
+  "main:h5": "dist/h5/index.js",
+  "files": [
+    "dist"
+  ],
   "templateInfo": {
     "name": "default",
     "typescript": false,
@@ -27,7 +32,7 @@
     "dev:quickapp": "npm run build:quickapp -- --watch",
     "build:ui": "TARO_BUILD_TYPE=ui taro build --ui"
   },
-  "author": "",
+  "author": "zhangfu",
   "license": "MIT",
   "dependencies": {
     "@tarojs/components": "2.2.9",
