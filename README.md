@@ -23,7 +23,7 @@ npm install cat-scrollview
 ## 参数说明
 方法 | params说明 | 返回说明
 ------------ | ------------- | -------------
-onRequest() | 加载更多的数据触发, 回调参数params={skip, limit} | 该方法需要return{success: true, skip, limit, total, data: dataSource }用来内容状态处理
+onRequest() | 加载更多的数据触发, 回调参数params={skip, limit} | 该方法需要return一个对象，例如成功: {success: true, skip, limit, total, data: dataSource }, 失败{success:false, msg: '失败的原因'}用来内容状态处理
 onChange() | 当前列表的数据 | 无
 renderHeader | 无 | 组件
 renderFooter | 无 | 组件 
