@@ -41,10 +41,14 @@ class CatScrollView extends Taro.Component {
       isLoading: false,
       isLastPage: false,
     }, () => {
-      const limit = this.params.limit;
-      // 刷新当前也的数据, 需要先清除当前加载
-      const lastIndex = this.dataSource.length - this.currentPageDataLen - 1;
-      this.dataSource = this.dataSource.slice(0, lastIndex);
+      // 当为一页的时候, 直接删除所有的缓存数据
+      if (this.params.skip === 0) {
+        this.dataSource = [];
+      } else {
+        // 当前非第一页的时候, 缓存上一页的数据
+        const lastIndex = this.dataSource.length - this.currentPageDataLen - 1;
+        this.dataSource = this.dataSource.slice(0, lastIndex);
+      }
       this.onRequest();
     });
   }
