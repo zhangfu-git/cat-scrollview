@@ -2,7 +2,7 @@
  * 请求失败 demo
  */
 import Taro, { Component } from '@tarojs/taro'
-import TaroScrollView from '../../components/TaroScrollView';
+import CatScrollView from '../../components/CatScrollView';
 import MyItem from '../../components/MyItem/index';
 
 export default class Index extends Component {
@@ -38,7 +38,7 @@ export default class Index extends Component {
     const { listData } = this.state;
 
     return (
-      <TaroScrollView
+      <CatScrollView
         onRequest={async(params) => {
           const { skip, limit } = params;
           const res = await this.getList({
@@ -74,7 +74,7 @@ export default class Index extends Component {
             )
           })
         }
-      </TaroScrollView>
+      </CatScrollView>
     )
   }
 }

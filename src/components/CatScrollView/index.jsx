@@ -8,7 +8,7 @@ import './index.less';
 import StatusBox from './StatusBox';
 import ErrorTips from './ErrorTips';
 
-class TaroScrollView extends Taro.Component {
+class CatScrollView extends Taro.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -199,4 +199,4 @@ class TaroScrollView extends Taro.Component {
   }
 }
 
-export default TaroScrollView;
+export default CatScrollView;
