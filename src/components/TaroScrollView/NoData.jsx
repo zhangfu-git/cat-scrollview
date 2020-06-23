@@ -1,5 +1,5 @@
 import { View } from '@tarojs/components';
-import styles from './index.less';
+import './index.less';
 
 export default function NoData(props) {
   return (
