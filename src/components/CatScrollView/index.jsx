@@ -116,7 +116,6 @@ class CatScrollView extends Taro.Component {
       isLoading: isLoading,
       hasData: hasData,
     }, () => {
-      if (!data.length) return;
       // 通知外部dataSource改变
       this.props.onChange && this.props.onChange(this.dataSource);
       if (this.inter) {
