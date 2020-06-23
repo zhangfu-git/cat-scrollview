@@ -22,6 +22,8 @@ class CatScrollView extends Taro.Component {
       skip: 0,
       limit: props.pageSize ? props.pageSize: 10, // 默认的limit
     };
+    // 首次加载标记
+    this.isFirstLoad = true;
     // 记录一个方向
     this.direcation = 1;    // 1为向下、-1为向上
     this.prevScrollTop = 0; // 上一次滚动条的位置
@@ -32,6 +34,12 @@ class CatScrollView extends Taro.Component {
   }
   componentDidMount() {
     this.onRequest();
+  }
+  componentDidShow() {
+    const { isDidShowReload } = this.props;
+    if (isDidShowReload && !this.isFirstLoad) {
+      this.reload();
+    }
   }
   // 刷新
   reload() {
@@ -74,6 +82,9 @@ class CatScrollView extends Taro.Component {
     if (typeof this.props.onRequest !== 'function') return console.error('请添加onRequest回调函数 on TaroSscrollView component');
     const res = await this.props.onRequest(this.params);
     
+    // 清除第一次加载标记
+    this.isFirstLoad = false;
+
     if (!res) throw 'onRequest方法返回对象的格式 {total, limit, skip, data, success } 或者异常情况 {msg, success}'
     
     // 请求失败处理
