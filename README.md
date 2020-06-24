@@ -21,12 +21,13 @@ npm install cat-scrollview
 ```
 
 ## 参数说明
-方法 | params说明 | 返回说明
+方法 | 返回的参数或者值说明 | 说明
 ------------ | ------------- | -------------
-onRequest() | 加载更多的数据触发, 回调参数params={skip, limit} | 该方法需要return一个对象，例如成功: {success: true, skip, limit, total, data: dataSource }, 失败{success:false, msg: '失败的原因'}用来内容状态处理
-onChange() | 当前列表的数据 | 无
-renderHeader | 无 | 组件
-renderFooter | 无 | 组件 
+onRequest() | params为{skip, limit} | 该方法需要return一个对象，例如成功: {success: true, skip, limit, total, data: dataSource }, 失败{success:false, msg: '失败的原因'}用来内容状态处理
+onChange() | 列表数据(data) | 无
+renderHeader() | 无 | 返回组件
+renderFooter() | 无 | 返回组件 
+isDidShowReload | boolean | 是否在小程序的componentDidShow触发刷新
 
 
 可通过ref去调用reload()、reset()进行重置和刷新列表，使用过滤条件改变重新获取列表可以调用reload

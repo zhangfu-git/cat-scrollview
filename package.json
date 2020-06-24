@@ -1,6 +1,6 @@
 {
   "name": "cat-scrollview",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "无效滚动加载列表",
   "main": "dist/index.js",
   "main:h5": "dist/h5/index.js",
