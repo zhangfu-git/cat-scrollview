@@ -11,7 +11,7 @@
 
 请使用微信扫一扫以下体验码
 
-![QRCode](https://github.com/zhangfu-git/cat-scrollview/blob/master/qrcode.jpg?raw=true)
+![QRCode](https://upload-images.jianshu.io/upload_images/3118313-155e2004128c5ff9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ## 安装
 
 然后在项目中安装 cat-scrollview
