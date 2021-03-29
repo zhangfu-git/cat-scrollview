@@ -34,10 +34,10 @@ isDidShowReload | boolean | 是否在小程序的componentDidShow触发刷新
 ## 使用
 
 ```js
-import catScrollview from 'cat-scrollview';
+import CatScrollview from 'cat-scrollview';
 
 ....
-<TaroScrollView
+<CatScrollView
   onRequest={async(params) => {
     const { skip, limit } = params;
     const res = await this.getList({
@@ -71,7 +71,7 @@ import catScrollview from 'cat-scrollview';
       )
     })
   }
-</TaroScrollView>
+</CatScrollview>
 ```
 
 ## 开发计划
